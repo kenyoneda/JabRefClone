@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Search Results</h1>
+	<ol>
+		<li th:each="ref : ${references}"
+		th:text="${ref.author} + ', ' + ${ref.title} + ', ' + ${ref.year} + ', ' + ${ref.journal} + '.'"></li>
+	</ol>
+
+    <a href="/demo/search">New Search</a>
+</body>
+</html>

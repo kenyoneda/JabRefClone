@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Search</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Search</h1>
+	
+	<form action="#" th:action="@{/demo/search}" th:object="${query}" method="post">
+		<p>Search Term: <input type="text" th:field="*{searchTerm}" /></p>
+		
+		<select th:field="*{queryType}">
+			<option th:each="queryType : ${T(hello.QueryType).values()}"
+					th:value="${{queryType}}"
+					th:text="${queryType}">
+			</option>
+		</select>
+	  	<p><input type="submit" value="Search"/></p>
+	</form>
+</body>
+</html>

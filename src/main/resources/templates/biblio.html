@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Bibliography Management System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+	
+	<form action="#" th:action="@{/demo/biblio}" th:object="${reference}" method="post">
+		<p>Author: <input type="text" th:field="*{author}"/></p>
+		<p th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</p>
+		<p>Title: <input type="text" th:field="*{title}"/></p>
+		<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</p>
+		<p>Year: <input type="text" th:field="*{year}"/></p>
+		<p th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</p>
+		<p>Journal: <input type="text" th:field="*{journal}"/></p>
+		<p th:if="${#fields.hasErrors('journal')}" th:errors="*{journal}">Journal Error</p>
+	  	<p><input type="submit" name="add" value="Add"/></p>
+	  	
+	  	<p>Delete Entry No: <input type="number" name="entryNumber"/></p>
+	  	<p><input type="submit" name="delete" value="Delete"/></p>
+	</form>
+	
+	<form action="#" th:action="@{/demo/edit}" method="get">
+		<p>Edit Entry No: <input type="number" name="entryNumber"/></p>
+		<p><input type="submit" name="edit" value="Edit"/></p>
+	</form>
+	
+	<ol>
+		<li th:each="ref : ${references}"
+		th:text="${ref.author} + ', ' + ${ref.title} + ', ' + ${ref.year} + ', ' + ${ref.journal} + '.'"></li>
+	</ol>
+</body>
+</html>

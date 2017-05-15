@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Bibliography Management System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Edit</h1>
+	
+	<form action="#" th:action="@{'/demo/edit/' + ${reference.id}}" th:object="${reference}" method="post">
+		<p th:text="'id: ' + ${reference.id}"/>
+		<p>Author: <input type="text" th:field="*{author}"/></p>
+		<p th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</p>
+		<p>Title: <input type="text" th:field="*{title}"/></p>
+		<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</p>
+		<p>Year: <input type="text" th:field="*{year}"/></p>
+		<p th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</p>
+		<p>Journal: <input type="text" th:field="*{journal}"/></p>
+		<p th:if="${#fields.hasErrors('journal')}" th:errors="*{journal}">Journal Error</p>
+	  	<p><input type="submit" name="edit" value="Submit"/></p>
+	</form>
+	
+	<form action="/demo/biblio">
+    	<input type="submit" value="Home" />
+	</form>
+
+</body>
+</html>
