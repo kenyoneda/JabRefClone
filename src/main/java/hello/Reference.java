@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity // Make table using this class
 @Table(name="ref_example")
 public class Reference {
 	@Id

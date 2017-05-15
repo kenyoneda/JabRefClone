@@ -1,5 +1,9 @@
 package hello;
 
+/**
+ * Search query object. 
+ * Consists of a query type (author, title, year etc.) and search term.
+ */
 public class Query {	
 	private QueryType queryType;
 	private String searchTerm;

@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import hello.Reference;
 
-// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
+// This will be AUTO IMPLEMENTED by Spring into a Bean called referenceRepository
 // CRUD refers Create, Read, Update, Delete
 
 @Transactional
